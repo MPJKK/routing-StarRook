@@ -1,0 +1,11 @@
+<div id="widget">
+  <ul>
+    <li class="boksi" *ngFor="let pysakki of vastaus">
+      <h4 (click)="changeLatLng(pysakki.lat, pysakki.lon)">{{pysakki.name}}</h4>
+    </li>
+  </ul>
+</div>
+
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

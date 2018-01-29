@@ -1,0 +1,32 @@
+agm-map {
+  height: 80%;
+  width: 100%;
+}
+
+#widget {
+  text-align: center;
+}
+#widget ul {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+
+  /* For IE, the outcast */
+  zoom:1;
+  *display: inline;
+}
+#widget li {
+  float: left;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  color:white;
+  background-color: slategray;
+  margin: 20px;
+}
+
+#widget li:hover {
+  background-color: #9a9a9a;
+}
