@@ -1,6 +1,9 @@
 <div class="center">
     <h1>Pysäkin nimi</h1>
-    <input [(ngModel)]="digitransitService.pysakki" placeholder="Etsi pysäkkiä..."><br>
-    <button (click)="moveToRoutes($event)">Etsi</button>
+    <mat-form-field>
+        <input matInput [(ngModel)]="digitransitService.pysakki" placeholder="Etsi pysäkkiä...">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="moveToRoutes($event)"><i class="material-icons">search</i></button>
 </div>
+
 

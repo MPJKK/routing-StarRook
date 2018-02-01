@@ -1,11 +1,23 @@
-<div id="widget">
-  <ul>
-    <li class="boksi" *ngFor="let pysakki of vastaus">
-      <h4 (click)="changeLatLng(pysakki.lat, pysakki.lon)">{{pysakki.name}}</h4>
-    </li>
-  </ul>
-</div>
+<article *ngFor="let pysakki of vastaus">
+  <div fxFlex="100">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title (click)="changeLatLng(pysakki.lat, pysakki.lon)">
+        <h4>{{pysakki.name}}</h4>
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+      <ul fxFlex="50">
+        <li *ngFor="let stop of pysakki.patterns">
+          <p>{{stop.name}}</p>
+        </li>
+      </ul>
+    <div fxFlex="50" class="agmmap">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
+        <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+    </div>
+  </mat-expansion-panel>
+  </div>
+</article>
 
-<agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map>
+

@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -10,8 +11,12 @@ import { RoutesComponent } from './routes/routes.component';
 import {DigitransitService} from './services/digitransit.service';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { AgmCoreModule } from '@agm/core';
+import { RouteDirectionPipe } from './pipes/route-direction.pipe';
+import { PiippuPipe } from './pipes/piippu.pipe';
+import {MatButtonModule, MatCheckboxModule, MatExpansionModule, MatFormFieldModule, MatInputModule, MatTabsModule} from '@angular/material';
 
 
 @NgModule({
@@ -19,7 +24,9 @@ import { AgmCoreModule } from '@agm/core';
     AppComponent,
     TopBarComponent,
     SetupComponent,
-    RoutesComponent
+    RoutesComponent,
+    RouteDirectionPipe,
+    PiippuPipe
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,15 @@ import { AgmCoreModule } from '@agm/core';
     FormsModule,
     AgmCoreModule.forRoot({
        apiKey: 'AIzaSyB9kVoYynUd-IIRya2_sqveVGJDNj7qH6M'
-    })
+    }),
+    BrowserAnimationsModule,
+      FlexLayoutModule,
+      MatButtonModule,
+      MatCheckboxModule,
+      MatTabsModule,
+      MatInputModule,
+      MatFormFieldModule,
+      MatExpansionModule
   ],
   providers: [DigitransitService],
   bootstrap: [AppComponent]

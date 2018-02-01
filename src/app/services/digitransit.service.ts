@@ -17,6 +17,16 @@ export class DigitransitService {
                 name
                 lat
                 lon
+                patterns {
+                    id
+                    name
+                    route {
+                        gtfsId
+                        shortName
+                        longName
+                    }
+                    directionId
+                }
             }
         }
         `;
